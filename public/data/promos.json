@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Same-Day Repairs",
+      "desc": "Most devices fixed in under 1 hour.",
+      "img": "/images/promo1.jpg"
+    },
+    {
+      "title": "Best Price Guarantee",
+      "desc": "We match or beat competitor repair quotes.",
+      "img": "/images/promo2.jpg"
+    },
+    {
+      "title": "Certified Technicians",
+      "desc": "Professional repair experts you can trust.",
+      "img": "/images/promo3.jpg"
+    }
+  ]
+  

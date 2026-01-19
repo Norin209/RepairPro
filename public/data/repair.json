@@ -1,0 +1,230 @@
+{
+    "models": {
+      "iPhone": ["iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14", "iPhone 15"],
+      "Android": ["Samsung S21", "Samsung S22", "Google Pixel 6", "Pixel 7"],
+      "Tablet / iPad": ["iPad 7", "iPad 8", "iPad Pro 11", "iPad Air"],
+      "Computer": ["MacBook Air", "MacBook Pro", "Windows Laptop"],
+      "Apple Watch": ["Series 4", "Series 5", "Series 6", "Series 7"],
+      "Game Console": ["PS4", "PS5", "Xbox One", "Nintendo Switch"]
+    },
+  
+    "issues": [
+      "Screen Replacement",
+      "Battery Replacement",
+      "Charging Port",
+      "Back Glass",
+      "Water Damage",
+      "Camera Repair",
+      "Speaker Issue",
+      "Software Problem"
+    ],
+  
+    "pricing": {
+      "iPhone": {
+        "iPhone 11": {
+          "Screen Replacement": 179,
+          "Battery Replacement": 89,
+          "Charging Port": 99,
+          "Back Glass": 159,
+          "Water Damage": 129,
+          "Camera Repair": 149,
+          "Speaker Issue": 99,
+          "Software Problem": 49
+        },
+        "iPhone 12": {
+          "Screen Replacement": 179,
+          "Battery Replacement": 89,
+          "Charging Port": 99,
+          "Back Glass": 159,
+          "Water Damage": 129,
+          "Camera Repair": 149,
+          "Speaker Issue": 99,
+          "Software Problem": 49
+        },
+        "iPhone 13": {
+          "Screen Replacement": 179,
+          "Battery Replacement": 89,
+          "Charging Port": 99,
+          "Back Glass": 159,
+          "Water Damage": 129,
+          "Camera Repair": 149,
+          "Speaker Issue": 99,
+          "Software Problem": 49
+        },
+        "iPhone 14": {
+          "Screen Replacement": 179,
+          "Battery Replacement": 89,
+          "Charging Port": 99,
+          "Back Glass": 159,
+          "Water Damage": 129,
+          "Camera Repair": 149,
+          "Speaker Issue": 99,
+          "Software Problem": 49
+        },
+        "iPhone 15": {
+          "Screen Replacement": 179,
+          "Battery Replacement": 89,
+          "Charging Port": 99,
+          "Back Glass": 159,
+          "Water Damage": 129,
+          "Camera Repair": 149,
+          "Speaker Issue": 99,
+          "Software Problem": 49
+        }
+      },
+  
+      "Android": {
+        "Samsung S21": {
+          "Screen Replacement": 159,
+          "Battery Replacement": 79,
+          "Charging Port": 89,
+          "Back Glass": 129,
+          "Water Damage": 119,
+          "Camera Repair": 129,
+          "Speaker Issue": 89,
+          "Software Problem": 49
+        },
+        "Samsung S22": {
+          "Screen Replacement": 159,
+          "Battery Replacement": 79,
+          "Charging Port": 89,
+          "Back Glass": 129,
+          "Water Damage": 119,
+          "Camera Repair": 129,
+          "Speaker Issue": 89,
+          "Software Problem": 49
+        },
+        "Google Pixel 6": {
+          "Screen Replacement": 159,
+          "Battery Replacement": 79,
+          "Charging Port": 89,
+          "Back Glass": 129,
+          "Water Damage": 119,
+          "Camera Repair": 129,
+          "Speaker Issue": 89,
+          "Software Problem": 49
+        },
+        "Pixel 7": {
+          "Screen Replacement": 159,
+          "Battery Replacement": 79,
+          "Charging Port": 89,
+          "Back Glass": 129,
+          "Water Damage": 119,
+          "Camera Repair": 129,
+          "Speaker Issue": 89,
+          "Software Problem": 49
+        }
+      },
+  
+      "Tablet / iPad": {
+        "iPad 7": {
+          "Screen Replacement": 229,
+          "Battery Replacement": 129,
+          "Charging Port": 99,
+          "Back Glass": 0,
+          "Water Damage": 0,
+          "Camera Repair": 119,
+          "Speaker Issue": 89,
+          "Software Problem": 59
+        },
+        "iPad 8": {
+          "Screen Replacement": 229,
+          "Battery Replacement": 129,
+          "Charging Port": 99,
+          "Back Glass": 0,
+          "Water Damage": 0,
+          "Camera Repair": 119,
+          "Speaker Issue": 89,
+          "Software Problem": 59
+        },
+        "iPad Pro 11": {
+          "Screen Replacement": 229,
+          "Battery Replacement": 129,
+          "Charging Port": 99,
+          "Back Glass": 0,
+          "Water Damage": 0,
+          "Camera Repair": 119,
+          "Speaker Issue": 89,
+          "Software Problem": 59
+        },
+        "iPad Air": {
+          "Screen Replacement": 229,
+          "Battery Replacement": 129,
+          "Charging Port": 99,
+          "Back Glass": 0,
+          "Water Damage": 0,
+          "Camera Repair": 119,
+          "Speaker Issue": 89,
+          "Software Problem": 59
+        }
+      },
+  
+      "Computer": {
+        "MacBook Air": {
+          "Screen Replacement": 399,
+          "Battery Replacement": 249,
+          "Charging Port": 179,
+          "Software Problem": 89
+        },
+        "MacBook Pro": {
+          "Screen Replacement": 399,
+          "Battery Replacement": 249,
+          "Charging Port": 179,
+          "Software Problem": 89
+        },
+        "Windows Laptop": {
+          "Screen Replacement": 399,
+          "Battery Replacement": 249,
+          "Charging Port": 179,
+          "Software Problem": 89
+        }
+      },
+  
+      "Apple Watch": {
+        "Series 4": {
+          "Screen Replacement": 199,
+          "Battery Replacement": 89,
+          "Software Problem": 49
+        },
+        "Series 5": {
+          "Screen Replacement": 199,
+          "Battery Replacement": 89,
+          "Software Problem": 49
+        },
+        "Series 6": {
+          "Screen Replacement": 199,
+          "Battery Replacement": 89,
+          "Software Problem": 49
+        },
+        "Series 7": {
+          "Screen Replacement": 199,
+          "Battery Replacement": 89,
+          "Software Problem": 49
+        }
+      },
+  
+      "Game Console": {
+        "PS4": {
+          "Screen Replacement": 199,
+          "Charging Port": 129,
+          "Software Problem": 79
+        },
+        "PS5": {
+          "Screen Replacement": 199,
+          "Charging Port": 129,
+          "Software Problem": 79
+        },
+        "Xbox One": {
+          "Screen Replacement": 199,
+          "Charging Port": 129,
+          "Software Problem": 79
+        },
+        "Nintendo Switch": {
+          "Screen Replacement": 199,
+          "Charging Port": 129,
+          "Software Problem": 79
+        }
+      }
+    }
+  }
+  

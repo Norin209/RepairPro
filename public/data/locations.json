@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ChIJvWkEk4YT1moR0G_F7nbx9HY",
+    "name": "Repair Pro Chelsea",
+    "address": "10/450 Nepean Hwy, Chelsea VIC 3196",
+    "mapUrl": "https://maps.google.com/?cid=8571741483907248080&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNl",
+    "lat": -38.0548,
+    "lng": 145.1166,
+    "phone": "(03) 9772 1234",
+    "hours": "Mon-Fri: 9am-5:30pm"
+  },
+  {
+    "id": "ChIJ5cStRspD1moR0G_F7nbx9HY",
+    "name": "Repair Pro Melbourne Central",
+    "address": "LG66/300 Lonsdale St, Melbourne VIC 3000",
+    "mapUrl": "https://maps.google.com/?cid=13135809160728780740&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ",
+    "lat": -37.8105,
+    "lng": 144.963,
+    "phone": "(03) 9650 5678",
+    "hours": "Mon-Sun: 10am-7pm"
+  },
+  {
+    "id": "ChIJI2i7V3QV1moRj3e3WydpWY4",
+    "name": "Repair Pro Springvale",
+    "address": "Kiosk C1, 46-58 Buckingham Ave, Springvale VIC 3171",
+    "mapUrl": "https://maps.google.com/?cid=10257345244076406671&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ",
+    "lat": -37.9505,
+    "lng": 145.1509,
+    "phone": "(03) 9540 9012",
+    "hours": "Mon-Sat: 9am-6pm"
+  }
+]

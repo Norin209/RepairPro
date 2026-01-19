@@ -1,0 +1,29 @@
+{
+    "categories": [
+      "iPhone",
+      "Android",
+      "Tablet / iPad",
+      "Computer",
+      "Apple Watch",
+      "Game Console"
+    ],
+  
+    "products": [
+      { "id": 1, "name": "iPhone 13", "price": 599, "category": "iPhone", "emoji": "📱", "condition": "Excellent" },
+      { "id": 2, "name": "iPhone 12", "price": 499, "category": "iPhone", "emoji": "📱", "condition": "Very Good" },
+      { "id": 3, "name": "Samsung S22", "price": 499, "category": "Android", "emoji": "🤖", "condition": "Excellent" },
+      { "id": 4, "name": "Google Pixel 6", "price": 449, "category": "Android", "emoji": "🤖", "condition": "Very Good" },
+  
+      { "id": 5, "name": "iPad Air", "price": 499, "category": "Tablet / iPad", "emoji": "💻", "condition": "Excellent" },
+      { "id": 6, "name": "iPad 8th Gen", "price": 349, "category": "Tablet / iPad", "emoji": "💻", "condition": "Good" },
+  
+      { "id": 7, "name": "MacBook Air", "price": 899, "category": "Computer", "emoji": "🖥️", "condition": "Excellent" },
+      { "id": 8, "name": "MacBook Pro", "price": 1299, "category": "Computer", "emoji": "🖥️", "condition": "Very Good" },
+  
+      { "id": 9, "name": "Apple Watch Series 6", "price": 299, "category": "Apple Watch", "emoji": "⌚", "condition": "Excellent" },
+  
+      { "id": 10, "name": "PS5", "price": 799, "category": "Game Console", "emoji": "🎮", "condition": "Excellent" },
+      { "id": 11, "name": "Nintendo Switch", "price": 399, "category": "Game Console", "emoji": "🎮", "condition": "Good" }
+    ]
+  }
+  
