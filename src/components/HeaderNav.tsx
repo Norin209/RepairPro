@@ -6,7 +6,7 @@ import logo from "../assets/logo.png";
 const navLinks = [
   { path: "/booking", label: "Repair Device" },
   { path: "/buy-back", label: "Buy Back" }, // Points to new SellPage
-  { path: "/shop", label: "Shop" },         // Points to new BuyPage
+  { path: "/coming-soon", label: "Shop" },         // Points to new BuyPage
   { path: "/location", label: "Location" },
   { path: "/about", label: "About Us" },
   { path: "/contact", label: "Contact" },

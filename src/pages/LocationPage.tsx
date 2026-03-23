@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ Imported useNavigate
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, onSnapshot } from "firebase/firestore";
 import ShopMapLeaflet from "../components/ShopMap";
@@ -64,6 +65,8 @@ const LocationPage = () => {
   const [loading, setLoading] = useState(true);
   const [selectedLocationTemp, setSelectedLocationTemp] = useState<Location | null>(null);
   const [activeMapCenter, setActiveMapCenter] = useState<[number, number] | null>(null);
+  
+  const navigate = useNavigate(); // ✅ Initialize useNavigate
 
   // 1. Fetch Locations
   useEffect(() => {
@@ -90,7 +93,7 @@ const LocationPage = () => {
     return () => unsubscribe();
   }, []);
 
-  // 2. ✅ SMART MAP CENTERING (Mobile vs Desktop)
+  // 2. SMART MAP CENTERING (Mobile vs Desktop)
   const handleLocationPreview = (location: Location) => {
     setSelectedLocationTemp(location);
     
@@ -107,9 +110,10 @@ const LocationPage = () => {
     }
   };
 
+  // ✅ Updated to use React Router and point to the correct "/booking" route
   const handleStartQuote = useCallback((location: Location) => {
-    window.location.href = `/repair-a-device?locationId=${location.id}`;
-  }, []);
+    navigate(`/booking?locationId=${location.id}`);
+  }, [navigate]);
 
   if (loading) return <div className="pt-40 text-center font-bold">Loading Store Locations...</div>;
 

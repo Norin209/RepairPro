@@ -17,6 +17,10 @@ import AboutUs from "./pages/AboutUs";
 import LocationPage from "./pages/LocationPage";
 import ContactUs from "./pages/ContactUs";
 
+// ✅ NEW HIDDEN PAGES IMPORTS
+import FranchisePage from "./pages/FranchisePage";
+import WorkOpportunitiesPage from "./pages/WorkOpportunitiesPage";
+
 // Admin Components
 import AdminLogin from "./admin/AdminLogin";
 import AdminDashboard from "./admin/AdminDashboard";
@@ -61,6 +65,10 @@ function App() {
         <Route path="/location" element={<LocationPage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<ContactUs />} />
+
+        {/* ✅ NEW HIDDEN ROUTES */}
+        <Route path="/franchise-opportunities" element={<FranchisePage />} />
+        <Route path="/work-opportunities" element={<WorkOpportunitiesPage />} />
 
         {/* Feature Flag Redirects */}
         <Route path="/coming-soon" element={<ComingSoon />} />

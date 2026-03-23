@@ -24,8 +24,9 @@ const MODAL_CONTENT = {
         <p className="mb-3 font-semibold">
           Minimum investment required. Contact us to receive our full franchise prospectus.
         </p>
+        {/* ✅ UPDATED LINK HERE */}
         <Link
-          to="/contact"
+          to="/franchise-opportunities"
           className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
         >
           Apply Now
@@ -46,8 +47,9 @@ const MODAL_CONTENT = {
           <li>Accredited certification</li>
           <li>Ongoing technical support</li>
         </ul>
+        {/* ✅ UPDATED LINK HERE */}
         <Link
-          to="/contact"
+          to="/work-opportunities"
           className="inline-block mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
         >
           View Courses

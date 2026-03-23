@@ -73,8 +73,11 @@ const useRepairLogic = () => {
   const [customerPhone, setCustomerPhone] = useState("");
   const [customerMessage, setCustomerMessage] = useState(""); 
   const [isLeadSubmitted, setIsLeadSubmitted] = useState(false);
-  const [discountCode, setDiscountCode] = useState("");
   
+  // 🛑 ANTI-SPAM LOCK
+  const [isSubmittingLead, setIsSubmittingLead] = useState(false);
+  
+  const [discountCode, setDiscountCode] = useState("");
   const [selectedLocationTemp, setSelectedLocationTemp] = useState<Location | null>(null);
   const [activeMapCenter, setActiveMapCenter] = useState<[number, number] | null>(null);
   const [leadId, setLeadId] = useState<string | null>(null);
@@ -112,7 +115,6 @@ const useRepairLogic = () => {
     email: customerEmail,
     phone: customerPhone,
     price: quotePrice,
-    // ✅ ADDED: This ensures 'createdAt' is saved to the bookings collection
     createdAt: new Date().toISOString(),
   }), [selectedDevice, selectedModel, selectedIssue, selectedLocation, customerEmail, customerPhone, quotePrice]);
 
@@ -195,8 +197,8 @@ const useRepairLogic = () => {
     return appliedPromo === null;
   }, [discountCode, appliedPromo]);
 
-  // ✅ FIXED: Using 'quotePrice' and 'store' keys to match PHP script
-  const sendLeadToTelegram = useCallback(async (stage: "LEAD_ONLY" | "BOOKING_CONFIRMED") => {
+  // ✅ FIXED: Now properly maps 'type' to "REPAIR" or "BOOKING" so the PHP script understands it.
+  const sendLeadToTelegram = useCallback(async (type: "REPAIR" | "BOOKING") => {
       if (!selectedDevice || !selectedModel || !selectedIssue || !selectedLocation) return;
       
       const fullDate = selectedDate ? getFullDateString(selectedDate) : "N/A";
@@ -205,6 +207,7 @@ const useRepairLogic = () => {
         : "NONE";
 
       const payload = {
+        type: type, // 👈 Tells PHP if this is a lead or a final booking
         device: selectedDevice,
         model: selectedModel,
         issue: selectedIssue,
@@ -217,7 +220,7 @@ const useRepairLogic = () => {
         date: fullDate,
         time: selectedTime || "N/A",
         discountCode: promoInfo,
-        stage: stage,
+        couponApplied: appliedPromo !== null
       };
 
       try {
@@ -238,11 +241,14 @@ const useRepairLogic = () => {
   const handleLeadSubmitInitial = useCallback(async () => {
     if (!db || !selectedLocation || !selectedDevice || !selectedModel || !selectedIssue || !customerEmail || customerPhone.length < 8) return;
     if (isPromoInvalid) return; 
+    
+    // 🛑 ANTI-SPAM: Prevent double firing
+    if (isSubmittingLead) return;
+    setIsSubmittingLead(true);
 
     const newLeadId = leadId || `lead-${Date.now()}`;
     const payload = {
       timestamp: new Date().toISOString(),
-      // ✅ ADDED: Duplicate timestamp as createdAt for Admin Panel consistency
       createdAt: new Date().toISOString(), 
       device: selectedDevice, model: selectedModel, issue: selectedIssue,
       store: selectedLocation.name, storeAddress: selectedLocation.address,
@@ -256,19 +262,33 @@ const useRepairLogic = () => {
       await setDoc(doc(db, "artifacts", appId, "users", userId, "leads", newLeadId), payload);
       setLeadId(newLeadId);
       setIsLeadSubmitted(true);
-      await sendLeadToTelegram("LEAD_ONLY"); // Sends Step 1 Lead
+      
+      // Send as a standard Lead first
+      await sendLeadToTelegram("REPAIR"); 
+      
       navigateStep(6);
-    } catch (err) { console.error("Lead save failed:", err); }
-  }, [db, selectedLocation, selectedDevice, selectedModel, selectedIssue, customerEmail, customerPhone, customerMessage, appliedPromo, isPromoInvalid, leadId, quotePrice, sendLeadToTelegram, navigateStep]);
+    } catch (err) { 
+        console.error("Lead save failed:", err); 
+    } finally {
+        setIsSubmittingLead(false); // Release the lock
+    }
+  }, [db, selectedLocation, selectedDevice, selectedModel, selectedIssue, customerEmail, customerPhone, customerMessage, appliedPromo, isPromoInvalid, leadId, quotePrice, sendLeadToTelegram, navigateStep, isSubmittingLead]);
 
   const handleBookingConfirm = useCallback(async () => {
     if (!selectedLocation || !selectedDevice || !selectedModel || !selectedIssue || selectedDate === null || !selectedTime) return;
+    
     try {
-      await handleBookingApiConfirm(); // This sends the Final Booking Telegram
+      await handleBookingApiConfirm(); 
+      
+      // ✅ NEW: Send the final confirmed booking alert to Telegram
+      await sendLeadToTelegram("BOOKING");
+      
       navigateStep(8);
       window.scrollTo(0, 0);
-    } catch (err) { console.error("Booking save failed:", err); }
-  }, [selectedLocation, selectedDevice, selectedModel, selectedIssue, selectedDate, selectedTime, customerEmail, customerPhone, customerMessage, quotePrice, appliedPromo, getFullDateString, handleBookingApiConfirm, navigateStep]);
+    } catch (err) { 
+        console.error("Booking save failed:", err); 
+    }
+  }, [selectedLocation, selectedDevice, selectedModel, selectedIssue, selectedDate, selectedTime, customerEmail, customerPhone, customerMessage, quotePrice, appliedPromo, getFullDateString, handleBookingApiConfirm, sendLeadToTelegram, navigateStep]);
 
   const handleLocationPreview = useCallback((loc: Location) => {
     setSelectedLocationTemp(loc);
